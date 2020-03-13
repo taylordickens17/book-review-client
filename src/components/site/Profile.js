@@ -1,28 +1,48 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import AddBook from './bookEdit/AddBook';
+import UpdateBook from './bookEdit/UpdateBook';
+import DeleteBook from './bookEdit/DeleteBook';
 // import { Card, CardBody } from 'reactstrap';
 
 const Profile = (props) => {
-    // const [result, setResult] = useState()
 
-    const addBook = () => {
-        fetch(`http://localhost:4000/auth/create/log`, {
-            method: 'POST',
+    const [addClicked, setAddClicked] = useState(false);
+    const [updateClicked, setUpdateClicked] = useState(false);
+    const [deleteClicked, setDeleteClicked] = useState(false);
+
+    const [books, setBooks] = useState([])
+    const [updateBooks, setUpdateBooks] = useState(false);
+    const [booksToUpdate, setBooksToUpdate] = useState({});
+
+    const fetchBooks = () => {
+        fetch(`https://localhost:3002/auth/one/log/`, {
+            method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': props.token
             })
-        })
-            .then(() => props.fetch)
+        }).then((res) => res.json())
+            .then((logData) => {
+                setBooks(logData)
+                console.log(logData);
+            })
+    }
+    useEffect(() => {
+        fetchBooks();
+    }, [])
+
+    const editUpdateBooks = (books) => {
+        setBooksToUpdate(books);
+        console.log(books);
     }
 
-    const updateBook = () => {
-
+    const updateOn = () => {
+        setUpdateBooks(true);
     }
 
-    const deleteBook = () => {
-
+    const updateOff = () => {
+        setUpdateBooks(false);
     }
-
 
     return (
         <div className="header">
@@ -30,9 +50,14 @@ const Profile = (props) => {
             {/* <h3 className="profileSecondHead">Welcome back, {profile}</h3> */}
             <h3 className="profileSecondBelow">Read any good books lately?</h3>
             <div className="profileDiv">
-                <button onClick={addBook}>ADD BOOK</button>
-                <button onClick={updateBook}>UPDATE BOOK</button>
-                <button onClick={deleteBook}>DELETE BOOK</button>
+                <button onClick={() => setAddClicked(true)} token={props.token} fetchBooks={fetchBooks}>ADD BOOK</button>
+                {addClicked === true ? <AddBook /> : null}
+                <button onClick={() => setUpdateClicked(true)}>UPDATE BOOK</button>
+                {updateClicked === true ? <UpdateBook /> : null}
+                <button onClick={() => setDeleteClicked(true)} books={books} editUpdateBooks={editUpdateBooks} updateOn={updateOn} fetchBooks={fetchBooks} token={props.token}>DELETE BOOK</button>
+                {deleteClicked === true ? <DeleteBook /> : null}
+                {updateBooks ? <UpdateBook booksToUpdate={booksToUpdate} updateOff={updateOff} token={props.token}
+                    fetchBooks={fetchBooks} /> : <></>}
             </div>
         </div>
         // <Card style={{ width: '18rem' }}>
@@ -46,6 +71,6 @@ const Profile = (props) => {
         //     </Card.Body>
         // </Card>
     );
-}
 
+}
 export default Profile;

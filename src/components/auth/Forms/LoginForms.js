@@ -23,6 +23,7 @@ const LogIn = (props) => {
     return (
         <Form onSubmit={handleSubmit}>
             <FormGroup>
+                <h3>Login</h3>
                 <Label htmlFor="username">Username</Label>
                 <Input onChange={(e) => setUsername(e.target.value)} name="username" value={username} />
                 {!username ? <p>username is required</p> : null}
@@ -32,7 +33,7 @@ const LogIn = (props) => {
                 <Input onChange={(e) => setPassword(e.target.value)} name="password" value={password} />
                 {!password ? <p>password is required</p> : null}
             </FormGroup>
-            <Button type="submit">Login</Button>
+            <Button type="submit">LOGIN</Button>
         </Form>
     )
 }
