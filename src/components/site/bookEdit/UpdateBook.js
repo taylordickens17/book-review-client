@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody } from 'reactstrap';
+import APIURL from '../../../helpers/environment';
 
 const UpdateBook = (props) => {
     const [editTitle, setEditTitle] = useState(props.updateBook.title);
@@ -11,7 +12,7 @@ const UpdateBook = (props) => {
 
     const updateEdit = (e, books) => {
         e.preventDefault();
-        fetch(`https://localhost:3000/auth/api/log/${props.updateBook.id}`, {
+        fetch(`${APIURL}/auth/api/log/${props.updateBook.id}`, {
             method: 'PUT',
             body: JSON.stringify({
                 title: editTitle,

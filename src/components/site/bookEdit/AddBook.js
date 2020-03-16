@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import APIURL from '../../../helpers/environment';
 
 const AddBook = (props) => {
     const [title, setTitle] = useState('');
@@ -11,7 +12,7 @@ const AddBook = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch(`https://localhost:3000/auth/create/log`, {
+        fetch(`${APIURL}/auth/create/log`, {
             method: 'POST',
             body: JSON.stringify({
                 title: title, author: author, genre: genre, rating: rating, description: description, review: review

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import AddBook from './bookEdit/AddBook';
 import UpdateBook from './bookEdit/UpdateBook';
 import DeleteBook from './bookEdit/DeleteBook';
+import APIURL from '../../helpers/environment';
 
 const Profile = (props) => {
     console.log(props)
@@ -15,7 +16,7 @@ const Profile = (props) => {
     const [booksToUpdate, setBooksToUpdate] = useState({});
 
     const fetchBooks = () => {
-        fetch(`https://localhost:3000/auth/all/log/`, {
+        fetch(`${APIURL}/auth/all/log/`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
