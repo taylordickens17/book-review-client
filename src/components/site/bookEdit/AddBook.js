@@ -11,15 +11,10 @@ const AddBook = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch(`https://localhost:3002/auth/create/log`, {
+        fetch(`https://localhost:3000/auth/create/log`, {
             method: 'POST',
             body: JSON.stringify({
-                title: title,
-                author: author,
-                genre: genre,
-                rating: rating,
-                description: description,
-                review: review
+                title: title, author: author, genre: genre, rating: rating, description: description, review: review
             }),
             headers: new Headers({
                 'Content-Type': 'application/json',

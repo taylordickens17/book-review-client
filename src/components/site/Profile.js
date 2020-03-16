@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import AddBook from './bookEdit/AddBook';
 import UpdateBook from './bookEdit/UpdateBook';
 import DeleteBook from './bookEdit/DeleteBook';
-// import { Card, CardBody } from 'reactstrap';
 
 const Profile = (props) => {
+    console.log(props)
 
     const [addClicked, setAddClicked] = useState(false);
     const [updateClicked, setUpdateClicked] = useState(false);
@@ -15,7 +15,7 @@ const Profile = (props) => {
     const [booksToUpdate, setBooksToUpdate] = useState({});
 
     const fetchBooks = () => {
-        fetch(`https://localhost:3002/auth/one/log/`, {
+        fetch(`https://localhost:3000/auth/all/log/`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -60,16 +60,6 @@ const Profile = (props) => {
                     fetchBooks={fetchBooks} /> : <></>}
             </div>
         </div>
-        // <Card style={{ width: '18rem' }}>
-        //     <Card.Img variant="top" src="holder.js/100px180" />
-        //     <Card.Body>
-        //         <Card.Title>Card Title</Card.Title>
-        //         <Card.Text>
-
-        //         </Card.Text>
-        //         <Button variant="primary">Go somewhere</Button>
-        //     </Card.Body>
-        // </Card>
     );
 
 }

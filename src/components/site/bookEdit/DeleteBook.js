@@ -3,7 +3,7 @@ import { Table, Button } from 'reactstrap';
 
 const DeleteBook = (props) => {
     const deleteBook = (books) => {
-        fetch(`https://localhost:3002/auth/delete/${books.id}`, {
+        fetch(`https://localhost:3000/auth/delete/${books.id}`, {
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -13,8 +13,8 @@ const DeleteBook = (props) => {
             .then(() => props.fetchWorkouts())
     }
 
-    const workoutMapper = () => {
-        return props.workouts.map((books, index) => {
+    const booksMapper = () => {
+        return props.books.map((books, index) => {
             return (
                 <tr key={index}>
                     <th scope="row">{books.id}</th>
@@ -25,7 +25,7 @@ const DeleteBook = (props) => {
                     <td>{books.description}</td>
                     <td>{books.review}</td>
                     <td>
-                        <Button color="warning" onClick={() => { props.editUpdateWorkout(books); props.updateOn() }}>Update</Button>
+                        <Button color="warning" onClick={() => { props.editUpdateBooks(books); props.updateOn() }}>Update</Button>
                         <Button color="danger" onClick={() => { deleteBook(books) }}>Delete</Button>
                     </td>
                 </tr>
@@ -48,7 +48,7 @@ const DeleteBook = (props) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {workoutMapper()}
+                    {booksMapper()}
                 </tbody>
             </Table>
         </>

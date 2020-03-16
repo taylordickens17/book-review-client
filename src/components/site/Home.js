@@ -1,6 +1,14 @@
 import React from "react";
 
 const Home = () => {
+
+
+
+
+
+
+
+
     return (
         <div className="header">
             <h2>The Book Review</h2>

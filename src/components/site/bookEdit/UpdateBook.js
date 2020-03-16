@@ -9,9 +9,9 @@ const UpdateBook = (props) => {
     const [editDesc, setEditDesc] = useState(props.updateBook.description);
     const [editRev, setEditRev] = useState(props.updateBook.review);
 
-    const updateEdit = (e) => {
+    const updateEdit = (e, books) => {
         e.preventDefault();
-        fetch(` https://td-zebookreviewapp2020.herokuapp.com/auth/api/log/${props.updateBook.id}`, {
+        fetch(`https://localhost:3000/auth/api/log/${props.updateBook.id}`, {
             method: 'PUT',
             body: JSON.stringify({
                 title: editTitle,
