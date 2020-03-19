@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 // import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import Footer from './components/site/Footer';
-import Navigation from './components/site/Navigation';
-
+import Index from './components/site/Index';
 
 const App = () => {
   const [sessionToken, setSessionToken] = useState(undefined)
@@ -27,7 +26,7 @@ const App = () => {
 
   return (
     <div>
-      <Navigation token={sessionToken} setSessionToken={setSessionToken} updateToken={updateToken} logout={clearToken} />
+      <Index token={sessionToken} setSessionToken={setSessionToken} updateToken={updateToken} logout={clearToken} />
       <Footer />
     </div>
   );

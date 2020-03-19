@@ -1,134 +1,118 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: Saira-Condensed;
+  src: url(./assets/SairaExtraCondensed-Black.ttf);
 }
 
-/* BODY */
+#headerTitle {
+  font-family: Saira-Condensed;
+  font-size: 2em;
+}
 
-body {
-  background-color: #ffffff;
-  font-family: 'Saira Extra Condensed', sans-serif;
-  src: local('Saira ExtraCondensed');
+/* PROFILE */
+.Profile{
+  position: absolute;
+  width: 218px;
+  height: 83px;
+  left: 38em;
+  top: 2em;
+  
+  font-family: 'Saira ExtraCondensed';
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 96.9%;
+  /* or 48px */
+
+  background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    border-style: none;
+    border-radius: 10px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
   }
 
-
-/* FOOTER */
-footer {
-  background-color: #ffffff;
-  color: #6B6A6D;
-  margin-top: 10px;
-}
-
-footer p {
-  margin-top: 0.8em!important;
-  margin-left: 1.5em;
-}
-
-/* MAIN */
-.main {
-  background-color: #ffffff;
-  color: #19192B;
-  height: 100%;
-  min-height: 100%;
-}
-
-.mainDiv {
-  margin: auto;
-  width: 90%;
-  padding: 5px;
-}
-
-.nav {
-  display: flex;
-  background-color: #53565A;
-  margin-top: 10px;
-}
-
-ul {
-  list-style-type: 'none';
-}
-
-/* NAV */
-.nav-list-styling {
-  list-style-type: none;
-  color: #ffffff;
-}
-
-.nav-list li{
-  display: inline;
-  list-style-type: none;
-}
-
-.nav-list a{
-  color: #ffffff;
-  padding: 0;
-  float: right;
-}
-
-.nav-route {
-  padding: '00px';
-}
-
-/* HEADER */
-.header {
-  padding: 0px;
-  height: 75vh;
-  width: 100vw;
-  background: linear-gradient(118.72deg, rgba(254, 143, 79, 0.9) 0%, rgba(255, 82, 84, 0.9) 100%);
-}
-h1 {
-position: absolute;
-width: 903px;
-height: 47px;
-left: 18px;
-top: 384px;
-
-font-family: 'Saira Extra Condensed';
-font-style: normal;
-font-weight: 800;
-font-size: 300px;
-line-height: 96.9%;
-/* or 291px */
-
-display: flex;
-align-items: center;
-text-align: center;
-
-color: #FFFFFF;
-
-opacity: 0.3;
-text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
-}
-
-.authButtons {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 343px;
-  height: 131px;
-  background: rgba(255, 255, 255, 0.3);
-  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
-  border-style: none;
-  border-radius: 10px;
-  float: right;
-}
-
-Link a {
+  .Home {
   position: absolute;
-width: 226px;
-height: 70px;
-left: 1012px;
-top: 283px;
+  width: 218px;
+  height: 83px;
+  left: 30em;
+  top: 2em;
+  
+  font-family: 'Saira ExtraCondensed';
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 96.9%;
+  /* or 48px */
 
-font-family: 'Saira ExtraCondensed';
-font-style: normal;
-font-weight: 800;
-font-size: 50px;
-line-height: 96.9%;
-/* or 48px */
+  background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    border-style: none;
+    border-radius: 10px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  }
 
-display: flex;
-align-items: center;
-text-align: center;
-}
+  .Login {
+    position: relative;
+    width: 343px;
+    height: 131px;
+    left: 19em;
+    top: -17em;
+    
+    font-family: 'Saira ExtraCondensed';
+    color: #ffffff;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 96.9%;
+    /* or 48px */
+  
+    background: rgba(255, 255, 255, 0.3);
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+      border-style: none;
+      border-radius: 10px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+  .Signup {
+    position: relative;
+    width: 343px;
+    height: 131px;
+    left: 19em;
+    top: -15em;
+    
+    font-family: 'Saira ExtraCondensed';
+    color: #ffffff;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 96.9%;
+    /* or 48px */
+  
+    background: rgba(255, 255, 255, 0.3);
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+      border-style: none;
+      border-radius: 10px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+  li {
+    margin: 0;
+  }

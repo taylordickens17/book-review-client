@@ -1,18 +1,24 @@
 import React, { useState } from 'react';
-import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody } from 'reactstrap';
+import { Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody } from 'reactstrap';
 import APIURL from '../../../helpers/environment';
 
+import styled from 'styled-components';
+
+
 const UpdateBook = (props) => {
-    const [editTitle, setEditTitle] = useState(props.updateBook.title);
-    const [editAuth, setEditAuth] = useState(props.updateBook.author);
-    const [editGenre, setEditGenre] = useState(props.updateBook.genre);
-    const [editRate, setEditRate] = useState(props.updateBook.rating);
-    const [editDesc, setEditDesc] = useState(props.updateBook.description);
-    const [editRev, setEditRev] = useState(props.updateBook.review);
+    const [editTitle, setEditTitle] = useState(props.booksToUpdate.title);
+    const [editAuth, setEditAuth] = useState(props.booksToUpdate.author);
+    const [editGenre, setEditGenre] = useState(props.booksToUpdate.genre);
+    const [editRate, setEditRate] = useState(props.booksToUpdate.rating);
+    const [editDesc, setEditDesc] = useState(props.booksToUpdate.description);
+    const [editRev, setEditRev] = useState(props.booksToUpdate.review);
+
+    console.log(props)
+    console.log(editTitle)
 
     const updateEdit = (e, books) => {
         e.preventDefault();
-        fetch(`${APIURL}/auth/api/log/${props.updateBook.id}`, {
+        fetch(`${APIURL}/auth/update/${props.booksToUpdate.id}`, {
             method: 'PUT',
             body: JSON.stringify({
                 title: editTitle,
@@ -31,6 +37,12 @@ const UpdateBook = (props) => {
             props.updateOff();
         })
     }
+
+    const UpdateButton = styled.button`
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    `;
 
     return (
         <Modal isOpen={true}>
@@ -61,7 +73,7 @@ const UpdateBook = (props) => {
                         <Label htmlFor="result">Edit Review:</Label>
                         <Input type="text" name="review" value={editRev} onChange={(e) => setEditRev(e.target.value)} />
                     </FormGroup>
-                    <Button type="submit">Update</Button>
+                    <UpdateButton type="submit">Update</UpdateButton>
                 </Form>
             </ModalBody>
         </Modal>
