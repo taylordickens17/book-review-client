@@ -35,11 +35,11 @@ const LogIn = (props) => {
                 <FormGroup>
                     <h3>Login</h3>
                     <Label htmlFor="username">Username: </Label>
-                    <Input onChange={(e) => setUsername(e.target.value)} name="username" value={username} placeholder="Enter Your Username" />
+                    <Input onChange={(e) => setUsername(e.target.value)} name="username" value={username} placeholder="Enter Your Username" required />
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="password">Password: </Label>
-                    <Input onChange={(e) => setPassword(e.target.value)} name="password" type="password" value={password} placeholder="Enter Your Password" />
+                    <Input onChange={(e) => setPassword(e.target.value)} name="password" type="password" value={password} placeholder="Enter Your Password" required />
                 </FormGroup>
                 <Button type="submit">LOGIN</Button>
             </Form>

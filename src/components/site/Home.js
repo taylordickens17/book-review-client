@@ -1,18 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import APIURL from '../../helpers/environment';
+
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
 
 import styled from 'styled-components';
 
+const useStyles = makeStyles({
+    card: {
+        height: 350,
+        width: 350,
+    }
+})
+
 
 const Home = () => {
+    const [books, setBooks] = useState([])
+    const classes = useStyles();
+
     const showAll = (books) => {
-        fetch(`${APIURL}/auth/all/log`, {
+        fetch(`${APIURL}/user/allbooks`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json'
             })
         })
-        // .then(() => props.fetchBooks())
+            .then(res => res.json())
+            .then((bookData) => { setBooks(bookData) })
     }
 
     const Heading = styled.h2`
@@ -51,6 +66,45 @@ const Home = () => {
         display: flex;
         color: #ffffff
     `;
+
+    const Row = styled.div`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%
+`;
+
+    const Column = styled.div`
+    display: flex;
+    flex-direction: column;
+    flex: 1
+`;
+
+    const booksMapper = () => {
+        return books.map((books, index) => {
+            return (
+                <Column>
+                    <Row>
+                        <Card className={classes.card}>
+                            <CardContent>
+                                <div>{books.title}</div>
+                                <div>{books.author}</div>
+                                <div>{books.genre}</div>
+                                <div>{books.rating}</div>
+                                <div>{books.description}</div>
+                                <div>{books.review}</div>
+                            </CardContent>
+                        </Card>
+                    </Row>
+                </Column>
+
+            )
+        })
+    }
+    useEffect(() => {
+        showAll();
+    }, [])
+
     return (
         <div className="header">
             <Heading>The Book Review</Heading>
@@ -58,7 +112,9 @@ const Home = () => {
             <SecondHeading className="homeSecondBelow" style={{ fontSize: '3em' }}>Tell us what you think.</SecondHeading>
             <SecondHeading className="homeThirdBelow" style={{ fontSize: '3em' }}>Look at other's reviews.</SecondHeading>
             <div className="homeDiv">
-
+                <Card>
+                    {booksMapper()}
+                </Card>
             </div>
         </div>
     );

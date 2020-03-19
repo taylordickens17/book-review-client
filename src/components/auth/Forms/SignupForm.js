@@ -6,26 +6,8 @@ const SignUp = (props) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    const validLength = () => {
-        let passwordError = "";
-        if (!this.state.password || this.state.password < 6) {
-            passwordError = "Password cannot be blank or less than 5 characters..."
-        }
-
-        if (passwordError) {
-            this.ListeningStateChangedEvent({ passwordError });
-            return false;
-        }
-        return true;
-    }
-
     const handleSubmit = (event) => {
         event.preventDefault();
-        const isValid = this.validLength();
-        if (isValid) {
-            console.log(this.state);
-            // this.setState(initialState);
-        }
         fetch(`${APIURL}/user/signup`, {
             method: 'POST',
             body: JSON.stringify({ user: { username: username, password: password } }),
@@ -45,12 +27,13 @@ const SignUp = (props) => {
                 <FormGroup>
                     <h3>Signup</h3>
                     <Label htmlFor="username">Username: </Label>
-                    <Input onChange={(e) => setUsername(e.target.value)} name="username" value={username} placeholder="Create a Username" />
+                    <Input onChange={(e) => setUsername(e.target.value)} name="username" value={username} placeholder="Create a Username" required />
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="password">Password: </Label>
-                    <Input onChange={(e) => setPassword(e.target.value)} name="password" type="password" secureTextEntry={true} value={password} placeholder="Create a Password" />
-                    <div style={{ color: 'red' }}>{this.state.passwordError}</div>
+                    <Input onChange={(e) => setPassword(e.target.value)} name="password" type="password" secureTextEntry={true} value={password} placeholder="Create a Password" required />
+                    {password.length >= 4 || password.length < 1 ? null : <p>password must be at least 5 characters</p>}
+                    {!username ? <p>email field is required</p> : null}
                 </FormGroup>
                 <Button type="submit">SIGNUP</Button>
             </Form>

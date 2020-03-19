@@ -34,6 +34,7 @@ const Background = styled.div`
 `;
 
 const NoBullet = styled.li`
+
 list-style-type: none;
 `;
 
@@ -63,9 +64,10 @@ const Navigation = (props) => {
         if (props.token === undefined) {
             return (
                 <Background>
-                    <div>
+                    <div className="parent-nav">
                         <div className="nav">
-                            <h1 className={classes.title} style={{ fontWeight: '800', fontSize: '300px', opacity: '0.3', textShadow: '0px 4px 20px rgba(0, 0, 0, 0.2)', color: '#FFFFFF', flexGrow: '1', margin: '0' }}>The Book Review</h1>
+                            {/* <h1 className={classes.title} style={{ fontWeight: '800', fontSize: '300px', opacity: '0.3', textShadow: '0px 4px 20px rgba(0, 0, 0, 0.2)', color: '#FFFFFF', flexGrow: '1', margin: '0' }}>The Book Review</h1> */}
+                            <h1 className={classes.title}>The Book <br /> Review</h1>
                             <div className="nav-list-styling">
                                 <NoBullet className="nav-list">
                                     <li><Link to="/login" className="Login">LOGIN</Link></li>
@@ -80,7 +82,7 @@ const Navigation = (props) => {
                             </Switch>
                         </div>
                     </div>
-                </Background>
+                </Background >
             )
         } else {
             return (
