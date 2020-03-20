@@ -51,8 +51,8 @@ const Logout = styled.button`
     text-align: center;
     width: 218px;
     height: 83px;
-    margin-left: 46em;
-    margin-top: 60px;
+    margin-left: 45.5em;
+    margin-top: 1.45em;
     color: #ffffff
 `;
 

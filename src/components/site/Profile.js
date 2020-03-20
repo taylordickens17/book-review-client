@@ -49,8 +49,8 @@ const Profile = (props) => {
     const Heading = styled.h2`
     position: absolute;
     width: 903px;
-    left: 50px;
-    top: 77px;
+    left: .25em;
+    top: .05em;
     margin: 0;
 
     font-family: Saira ExtraCondensed;
@@ -97,7 +97,8 @@ const Profile = (props) => {
     width: 218px;
     height: 83px;
     margin-left: 46em;
-    margin-top: 60px;
+    margin-top: 2.5em;
+    margin-bottom: 1em;
     color: #ffffff
 `;
 
@@ -106,8 +107,8 @@ const Profile = (props) => {
         <div className="header">
             <Heading>The Book Review</Heading>
             <SecondHeading className="profileSecondHead">Welcome back!</SecondHeading>
-            <SecondHeading style={{ fontSize: '3em', left: '12em', top: '1em' }} className="profileSecondBelow">Read any good books lately?</SecondHeading>
-            <SecondHeading style={{ fontSize: '3em', left: '.5em', top: '1em' }}>Your Shelf:</SecondHeading>
+            <SecondHeading style={{ fontSize: '3em', left: '11.8em', top: '1.5em' }} className="profileSecondBelow">Read any good books lately?</SecondHeading>
+            <SecondHeading style={{ fontSize: '3em', left: '.5em', top: '3.5em' }}>Your Shelf:</SecondHeading>
             <div className="profileDiv">
                 <AddButton onClick={() => setAddClicked(true)} >ADD BOOK</AddButton>
                 {addClicked === true ? <AddBook token={props.token} fetchBooks={fetchBooks} /> : null}

@@ -36,7 +36,7 @@ const AddBook = (props) => {
     }
 
     return (
-        <>
+        <div className="addForm">
             <h3>Add a Book:</h3>
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
@@ -66,7 +66,7 @@ const AddBook = (props) => {
                 </FormGroup>
                 <Button type="submit">ADD BOOK</Button>
             </Form>
-        </>
+        </div>
     )
 }
 

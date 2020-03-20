@@ -32,10 +32,9 @@ const Home = () => {
 
     const Heading = styled.h2`
         position: absolute;
-        width: 903px;
         height: 47px;
-        left: 50px;
-        top: 77px;
+        left: .25em;
+        top: .05em;
     
         font-family: Saira ExtraCondensed;
         font-style: normal;
@@ -55,13 +54,14 @@ const Home = () => {
     const SecondHeading = styled.h3`
         position: relative;
         width: 1048px;
-        left: 25px;
+        left: .9em;
+        top: .5em;
         margin: 0;
 
         font-family: Saira ExtraCondensed;
         font-style: normal;
         font-weight: 800;
-        font-size: 7em;
+        font-size: 10em;
 
         display: flex;
         color: #ffffff
@@ -109,8 +109,8 @@ const Home = () => {
         <div className="header">
             <Heading>The Book Review</Heading>
             <SecondHeading className="homeSecondHead" >READ A BOOK</SecondHeading>
-            <SecondHeading className="homeSecondBelow" style={{ fontSize: '3em' }}>Tell us what you think.</SecondHeading>
-            <SecondHeading className="homeThirdBelow" style={{ fontSize: '3em' }}>Look at other's reviews.</SecondHeading>
+            <SecondHeading className="homeSecondBelow" style={{ fontSize: '3em', left: '3em' }}>Tell us what you think.</SecondHeading>
+            <SecondHeading className="homeThirdBelow" style={{ fontSize: '3em', left: '3em', marginBottom: '1em' }}>Look at other's reviews.</SecondHeading>
             <div className="homeDiv">
                 <Card>
                     {booksMapper()}

@@ -20,13 +20,15 @@ const Row = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 100%
+    width: 100%;
+    border: 1px solid black
 `;
 
 const Column = styled.div`
     display: flex;
     flex-direction: column;
-    flex: 1
+    flex: 1;
+    border: 1px solid blue;
 `;
 
 const DeleteBook = (props) => {
@@ -47,8 +49,8 @@ const DeleteBook = (props) => {
     const booksMapper = () => {
         return props.books.map((books, index) => {
             return (
-                <Column>
-                    <Row>
+                <Row>
+                    <Column>
                         <Card className={classes.card}>
                             <CardContent>
                                 <div>{books.title}</div>
@@ -63,16 +65,20 @@ const DeleteBook = (props) => {
                                 <Button size="small" color="dark" onClick={() => { deleteBook(books) }}>Delete</Button>
                             </CardActions>
                         </Card>
-                    </Row>
-                </Column>
+                    </Column>
+                </Row>
 
             )
         })
     }
     return (
-        <Card>
-            {booksMapper()}
-        </Card>
+        <Row>
+            <Column>
+                <Card>
+                    {booksMapper()}
+                </Card>
+            </Column>
+        </Row>
     )
 }
 

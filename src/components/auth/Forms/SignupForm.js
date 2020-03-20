@@ -33,7 +33,6 @@ const SignUp = (props) => {
                     <Label htmlFor="password">Password: </Label>
                     <Input onChange={(e) => setPassword(e.target.value)} name="password" type="password" secureTextEntry={true} value={password} placeholder="Create a Password" required />
                     {password.length >= 4 || password.length < 1 ? null : <p>password must be at least 5 characters</p>}
-                    {!username ? <p>email field is required</p> : null}
                 </FormGroup>
                 <Button type="submit">SIGNUP</Button>
             </Form>

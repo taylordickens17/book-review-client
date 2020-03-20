@@ -8,7 +8,7 @@ body {
 }
 
 #headerTitle {
-  font-family: Saira-Condensed;
+  font-family: Extra Saira-Condensed;
   font-size: 2em;
 }
 
@@ -19,8 +19,7 @@ body {
   height: 83px;
   left: 38em;
   top: 2em;
-  
-  font-family: 'Saira ExtraCondensed';
+
   color: #ffffff;
   font-style: normal;
   font-weight: 800;
@@ -72,7 +71,6 @@ body {
     /* left: 19em;
     top: -17em; */
     
-    font-family: 'Saira ExtraCondensed';
     color: #ffffff;
     font-style: normal;
     font-weight: 800;
@@ -97,8 +95,7 @@ body {
     height: 131px;
     /* left: 19em;
     top: -15em; */
-    
-    font-family: 'Saira ExtraCondensed';
+
     color: #ffffff;
     font-style: normal;
     font-weight: 800;
@@ -144,10 +141,21 @@ body {
     /* flex-row: '1';  */
     margin: 0;
     width: 50vw;
+    padding: .1em;
   }
 
   .nav-list-styling {
     padding: 1em;
+    padding-right: 6em;
     display: flex;
     z-index: 3;
+  }
+
+  .addForm {
+    left: 5em;
+  }
+
+  footer {
+    color: #aaaaaa;
+    justify-content: flex-end;
   }
