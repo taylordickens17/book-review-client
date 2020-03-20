@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 // import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
-import Footer from './components/site/Footer';
+// import Footer from './components/site/Footer';
 import Index from './components/site/Index';
 
 const App = () => {
@@ -27,7 +27,7 @@ const App = () => {
   return (
     <div>
       <Index token={sessionToken} setSessionToken={setSessionToken} updateToken={updateToken} logout={clearToken} />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

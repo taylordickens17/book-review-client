@@ -21,14 +21,12 @@ const Row = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    border: 1px solid black
 `;
 
 const Column = styled.div`
     display: flex;
     flex-direction: column;
     flex: 1;
-    border: 1px solid blue;
 `;
 
 const DeleteBook = (props) => {
