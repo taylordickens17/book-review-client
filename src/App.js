@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-// import 'bootstrap/dist/css/bootstrap.css';
-import './App.css';
-// import Footer from './components/site/Footer';
-import Index from './components/site/Index';
+import 'bootstrap/dist/css/bootstrap.css';
+import Auth from './components/auth/Auth';
+import Home from './components/site/Home';
+// import Navigation from './components/site/Navigation';
+import { BrowserRouter as Router } from 'react-router-dom';
+
 
 const App = () => {
-  const [sessionToken, setSessionToken] = useState(undefined)
+  const [sessionToken, setSessionToken] = useState('');
 
   useEffect(() => {
     if (localStorage.getItem('token')) {
@@ -21,13 +23,27 @@ const App = () => {
 
   const clearToken = () => {
     localStorage.clear();
-    setSessionToken(undefined);
+    setSessionToken('');
+  }
+
+  const protectedViews = () => {
+    return (
+      sessionToken === localStorage.getItem('token') ?
+        <div>
+          <Router>
+            <Home clickLogout={clearToken} token={sessionToken} />
+          </Router>
+        </div>
+        : <Auth updateToken={updateToken} />
+    )
   }
 
   return (
     <div>
-      <Index token={sessionToken} setSessionToken={setSessionToken} updateToken={updateToken} logout={clearToken} />
-      {/* <Footer /> */}
+      {protectedViews()}
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossOrigin="anonymous">
+      </script>
     </div>
   );
 }

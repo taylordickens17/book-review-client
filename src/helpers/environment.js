@@ -7,7 +7,9 @@ switch (window.location.hostname) {
         APIURL = 'http://localhost:4000';
         break;
     case 'td-client-zebookreviewapp2020.herokuapp.com':
-        APIURL = 'https://td-zebookreviewapp2020.herokuapp.com'
+        APIURL = 'https://td-zebookreviewapp2020.herokuapp.com';
+        break;
+    default: APIURL = 'http://localhost:4000';
 }
 
 export default APIURL;
