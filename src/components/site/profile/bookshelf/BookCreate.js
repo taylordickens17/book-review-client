@@ -28,7 +28,11 @@ const BookCreate = (props) => {
                     'Content-Type': 'application/json',
                     'Authorization': props.token
                 })
-            }).then(res => res.json())
+            }).then(res => {
+                res.json()
+                console.log('hello')
+            })
+
                 .then(() => {
                     setTitle('');
                     setAuthor('');
@@ -36,11 +40,11 @@ const BookCreate = (props) => {
                     setRating('');
                     setDescription('');
                     setReview('');
-                    // props.fetchBooks();
-                    // props.createOff();
+                    props.fetchBooks();
+                    props.createOff();
                 })
         } else {
-            alert('Please fill out all fields.')
+            alert('Please, fill out all fields.')
         }
     }
     console.log(title);

@@ -16,30 +16,25 @@ const BookCards = (props) => {
             })
         }).then(() => props.fetchBooks)
     }
-    console.log(props.books);
 
     const bookMapper = () => {
-        if (props.books.books == undefined) {
-            console.log('empty for now. sorry.')
-        } else {
-            return props.books.map((books, index) => {
-                return (
-                    <Card key={index}>
-                        <CardBody>
-                            <CardTitle>{books.title}</CardTitle>
-                            <CardSubtitle>Author: {books.author}</CardSubtitle>
-                            <CardSubtitle>Genre: {books.genre}</CardSubtitle>
-                            <CardSubtitle>Rating: {books.rating}</CardSubtitle>
-                            <CardSubtitle>Description: {books.description}</CardSubtitle>
-                            <CardSubtitle>{books.review}</CardSubtitle>
-                            <IconButton onClick={() => { props.updateMyBooks(books); props.updateOn() }}><CreateIcon /></IconButton>
-                            <IconButton onClick={() => { bookDelete(books) }}><ClearIcon /></IconButton>
-                        </CardBody>
-                    </Card>
+        return props.books.map((books, index) => {
+            return (
+                <Card key={index}>
+                    <CardBody>
+                        <CardTitle>{books.title}</CardTitle>
+                        <CardSubtitle>Author: {books.author}</CardSubtitle>
+                        <CardSubtitle>Genre: {books.genre}</CardSubtitle>
+                        <CardSubtitle>Rating: {books.rating}</CardSubtitle>
+                        <CardSubtitle>Description: {books.description}</CardSubtitle>
+                        <CardSubtitle>{books.review}</CardSubtitle>
+                        <IconButton onClick={() => { props.updateMyBooks(books); props.updateOn() }}><CreateIcon /></IconButton>
+                        <IconButton onClick={() => { bookDelete(books) }}><ClearIcon /></IconButton>
+                    </CardBody>
+                </Card>
 
-                )
-            })
-        }
+            )
+        })
     }
     return (
         <CardDeck>

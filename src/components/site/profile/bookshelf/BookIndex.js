@@ -34,10 +34,6 @@ const BookIndex = (props) => {
         setUpdateBooks(books);
     }
 
-    // const createMyBooks = (books) => {
-    //     setBookCreate(books);
-    // }
-
     const updateOn = () => {
         setUpdateActive(true);
     }
