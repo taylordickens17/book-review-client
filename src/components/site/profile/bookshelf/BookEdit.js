@@ -3,12 +3,12 @@ import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody } 
 import APIURL from '../../../../helpers/environment';
 
 const BookEdit = (props) => {
-    const [editTitle, setEditTitle] = useState(props.updateBook.title);
-    const [editAuthor, setEditAuthor] = useState(props.updateBook.author);
-    const [editGenre, setEditGenre] = useState(props.updateBook.genre);
-    const [editRating, setEditRating] = useState(props.updateBook.rating);
-    const [editDescription, setEditDescription] = useState(props.updateBook.description);
-    const [editReview, setEditReview] = useState(props.updateBook.review);
+    const [editTitle, setEditTitle] = useState(props.updateBooks.title);
+    const [editAuthor, setEditAuthor] = useState(props.updateBooks.author);
+    const [editGenre, setEditGenre] = useState(props.updateBooks.genre);
+    const [editRating, setEditRating] = useState(props.updateBooks.rating);
+    const [editDescription, setEditDescription] = useState(props.updateBooks.description);
+    const [editReview, setEditReview] = useState(props.updateBooks.review);
 
     const booksUpdate = () => {
         fetch(`${APIURL}/book/update/${props.updateBooks.id}`, {
@@ -37,7 +37,7 @@ const BookEdit = (props) => {
 
     return (
         <Modal isOpen={true}>
-            <ModalHeader>Add Book<Button className="modal-close update-btn" onClick={closeUpdateModal}>X</Button></ModalHeader>
+            <ModalHeader>Update Book<Button className="modal-close update-btn" onClick={closeUpdateModal}>X</Button></ModalHeader>
             <ModalBody >
                 <Form onSubmit={booksUpdate}>
                     <FormGroup>

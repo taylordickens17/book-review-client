@@ -29,7 +29,7 @@ const BookCards = (props) => {
                         <CardSubtitle>Description: {books.description}</CardSubtitle>
                         <CardSubtitle>{books.review}</CardSubtitle>
                         <IconButton onClick={() => { props.updateMyBooks(books); props.updateOn() }}><CreateIcon /></IconButton>
-                        <IconButton onClick={() => { bookDelete(books) }}><ClearIcon /></IconButton>
+                        <IconButton onClick={() => { bookDelete(books); window.location.reload(); }}><ClearIcon /></IconButton>
                     </CardBody>
                 </Card>
 
