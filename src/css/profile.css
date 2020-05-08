@@ -22,3 +22,9 @@ hr {
     font-weight: 800;
     font-size: 30px; 
 }
+
+@media (max-width: 414px) {
+    .profile {
+        margin-bottom: 100px;
+    }
+}

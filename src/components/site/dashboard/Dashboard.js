@@ -40,7 +40,7 @@ const Dashboard = (props) => {
     }
 
     return (
-        <Container>
+        <Container className="dashboard">
             <h1 className="dash-title">READ A BOOK</h1>
             <h3 className="dash-subtitle">Tell us what you think.</h3>
             <h3 className="dash-subtitle">Look at other's reviews.</h3>
