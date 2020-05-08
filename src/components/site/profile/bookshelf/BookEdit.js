@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody } from 'reactstrap';
+import { Button, Form, FormGroup, Input, Modal, ModalHeader, ModalBody } from 'reactstrap';
 import IconButton from '@material-ui/core/IconButton/IconButton';
 import ClearIcon from '@material-ui/icons/Clear';
 import APIURL from '../../../../helpers/environment';

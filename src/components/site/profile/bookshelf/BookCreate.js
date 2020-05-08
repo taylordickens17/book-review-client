@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Form, FormGroup, Label, Input, ModalBody, Modal, ModalHeader } from 'reactstrap';
+import { Button, Form, FormGroup, Input, ModalBody, Modal, ModalHeader } from 'reactstrap';
 import IconButton from '@material-ui/core/IconButton/IconButton';
 import ClearIcon from '@material-ui/icons/Clear';
 import APIURL from '../../../../helpers/environment';
@@ -8,8 +8,8 @@ const BookCreate = (props) => {
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
     const [genre, setGenre] = useState('');
-    const [rating, setRating] = useState('');
     const [description, setDescription] = useState('');
+    const [rating, setRating] = useState('');
     const [review, setReview] = useState('');
 
     const handleSubmit = (event) => {
@@ -22,8 +22,8 @@ const BookCreate = (props) => {
                     title: title,
                     author: author,
                     genre: genre,
-                    rating: rating,
                     description: description,
+                    rating: rating,
                     review: review
                 }),
                 headers: new Headers({
@@ -39,8 +39,8 @@ const BookCreate = (props) => {
                     setTitle('');
                     setAuthor('');
                     setGenre('');
-                    setRating('');
                     setDescription('');
+                    setRating('');
                     setReview('');
                     props.fetchBooks();
                     props.createOff();

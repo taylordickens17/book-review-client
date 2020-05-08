@@ -6,3 +6,19 @@ hr {
     border-top: 1px solid white;
     margin-top: 0
 }
+
+.prof-title {
+    font-weight: 800;
+    font-size: 100px;
+    text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.prof-subtitle {
+    font-weight: 800;
+    font-size: 30px;
+}
+
+.bookshelf-title {
+    font-weight: 800;
+    font-size: 30px; 
+}

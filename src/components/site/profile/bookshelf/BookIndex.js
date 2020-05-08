@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import BookCreate from './BookCreate';
 import BookEdit from './BookEdit';
 import BookCards from './BookCards';
-import { Container, Row, Col, Button } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import IconButton from '@material-ui/core/IconButton/IconButton';
 import AddIcon from '@material-ui/icons/Add';
 import APIURL from '../../../../helpers/environment';
@@ -56,7 +56,7 @@ const BookIndex = (props) => {
         <Container>
             <Row>
                 <Col md="12">
-                    <h3 style={{ marginLeft: "-15px" }}>BookShelf<IconButton onClick={() => createOn()}><AddIcon style={{ color: "white" }} /></IconButton></h3>
+                    <h3 className="bookshelf-title" style={{ marginLeft: "-15px" }}>BookShelf<IconButton onClick={() => createOn()}><AddIcon style={{ color: "white" }} /></IconButton></h3>
                     <hr style={{ marginLeft: "-15px" }} />
                 </Col>
             </Row>

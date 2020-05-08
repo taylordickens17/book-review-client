@@ -3,6 +3,11 @@ import React from 'react';
 //CSS Bootstrap
 import 'bootstrap/dist/css/bootstrap.css';
 
+//import icons
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import HomeIcon from '@material-ui/icons/Home';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+
 //Reactstrap
 import { Nav, NavItem, Button } from 'reactstrap';
 
@@ -29,6 +34,26 @@ const Navigation = (props) => (
                 <Button className="link-styled" onClick={props.clickLogout}>LOGOUT</Button>
             </NavItem>
         </Nav>
+
+        {/*MOBILE NAVBAR */}
+        <div className="mobile-navbar">
+            <ul className="mobile-navbar-list">
+                <li className="mobile-item">
+                    <Link className="mobile-link" to="/dashboard">
+                        <HomeIcon className="mobile-nav-dash" />
+                    </Link>
+                </li>
+                <li className="mobile-item">
+                    <Link className="mobile-link" to="/profile">
+                        <AccountCircleIcon className="mobile-nav-prof" />
+                    </Link>
+                </li>
+                <li className="mobile-item" onClick={props.clickLogout}>
+                    <ExitToAppIcon className="mobile-nav-exit" />
+                </li>
+            </ul>
+        </div>
+
         <Switch>
             <Route exact path="/dashboard"><Dashboard token={props.token} /></Route>
             <Route exact path="/profile"><Profile token={props.token} username={props.username} /></Route>

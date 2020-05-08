@@ -23,11 +23,12 @@ const BookCards = (props) => {
                 <Card key={index} className="book-card">
                     <CardBody className="book-body">
                         <CardTitle className="card-title">{books.title}</CardTitle>
-                        <CardSubtitle>Author: {books.author}</CardSubtitle>
+                        <CardSubtitle>By {books.author}</CardSubtitle>
+                        <hr className="card-style" />
                         <CardSubtitle>Genre: {books.genre}</CardSubtitle>
                         <CardSubtitle>Description: {books.description}</CardSubtitle>
                         <CardSubtitle>Rating: {books.rating}</CardSubtitle>
-                        <CardSubtitle>{books.review}</CardSubtitle>
+                        <CardSubtitle>Review: {books.review}</CardSubtitle>
                         <IconButton onClick={() => { props.updateMyBooks(books); props.updateOn() }}><CreateIcon /></IconButton>
                         <IconButton onClick={() => { bookDelete(books); window.location.reload(); }}><ClearIcon /></IconButton>
                     </CardBody>
