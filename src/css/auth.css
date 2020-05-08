@@ -1,0 +1,16 @@
+.auth-switch{
+    color: white;
+}
+
+.auth-button {
+    padding: 20px 40px 20px 40px;
+    word-spacing: 3px;
+    border: none;
+    border-radius: 10px;
+    background:rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 96.9%;
+}

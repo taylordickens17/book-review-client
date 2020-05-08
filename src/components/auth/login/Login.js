@@ -32,7 +32,7 @@ const Login = (props) => {
                     <FormGroup>
                         <Input onChange={e => setPassword(e.target.value)} name="password" type="password" value={password} placeholder="Password" />
                     </FormGroup>
-                    <Button type="submit" variant="outlined" className="login-button">Login</Button>
+                    <Button type="submit" variant="outlined" className="auth-button" username={username} >Login</Button>
                     <p className="auth-switch" onClick={() => props.setIsLogin(!props.isLogin)}>
                         {props.isLogin ? "Don't have an account? Sign up here." : "Already have an account? Login here."}
                     </p>

@@ -24,9 +24,9 @@ const Dashboard = (props) => {
     const bookMapper = () => {
         return books.map((books, index) => {
             return (
-                <Card key={index}>
-                    <CardBody>
-                        <CardTitle>{books.title}</CardTitle>
+                <Card key={index} className="book-card">
+                    <CardBody className="book-body">
+                        <CardTitle className="card-title">{books.title}</CardTitle>
                         <CardSubtitle>Author: {books.author}</CardSubtitle>
                         <CardSubtitle>Genre: {books.genre}</CardSubtitle>
                         <CardSubtitle>Rating: {books.rating}</CardSubtitle>
@@ -40,7 +40,11 @@ const Dashboard = (props) => {
 
     return (
         <Container>
-            <h1>Dashboard</h1>
+            <h1>READ A BOOK</h1>
+            <h3>Tell us what you think.</h3>
+            <h3>Look at other's reviews.</h3>
+            <hr />
+            <br />
             <CardDeck>
                 {bookMapper()}
             </CardDeck>

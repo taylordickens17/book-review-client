@@ -1,0 +1,31 @@
+.card-title {
+    font-size: 25px
+}
+
+/* create modals */
+.modal-btn {
+    background-color: white;
+    color: grey;
+}
+
+.modal-form-bg {
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid grey;
+}
+
+.modal-close {
+    margin-left: 15em !important;
+}
+
+.update-btn {
+    margin-left: 14em !important;
+}
+
+.book-card {
+    min-width: 338px;
+    max-width: 300px;
+    max-height: 368px;
+    margin-bottom: 10px !important;
+    border: none;
+}

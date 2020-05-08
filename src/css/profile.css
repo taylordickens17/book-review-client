@@ -1,0 +1,8 @@
+h1, h2, h3 {
+    color: white;
+}
+
+hr {
+    border-top: 1px solid white;
+    margin-top: 0
+}

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody } from 'reactstrap';
+import IconButton from '@material-ui/core/IconButton/IconButton';
+import ClearIcon from '@material-ui/icons/Clear';
 import APIURL from '../../../../helpers/environment';
 
 const BookEdit = (props) => {
@@ -37,34 +39,28 @@ const BookEdit = (props) => {
 
     return (
         <Modal isOpen={true}>
-            <ModalHeader>Update Book<Button className="modal-close update-btn" onClick={closeUpdateModal}>X</Button></ModalHeader>
+            <ModalHeader>Update Book<IconButton className="update-btn" onClick={closeUpdateModal}><ClearIcon /></IconButton></ModalHeader>
             <ModalBody >
                 <Form onSubmit={booksUpdate}>
                     <FormGroup>
-                        <Label htmlFor="title">Title:</Label>
-                        <Input className="modal-form-bg" name="title" value={editTitle} onChange={e => setEditTitle(e.target.value)} />
+                        <Input className="modal-form-bg" name="title" value={editTitle} placeholder="Title" onChange={e => setEditTitle(e.target.value)} />
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlFor="autho">Author:</Label>
-                        <Input className="modal-form-bg" name="author" value={editAuthor} onChange={e => setEditAuthor(e.target.value)} />
+                        <Input className="modal-form-bg" name="author" value={editAuthor} placeholder="Author" onChange={e => setEditAuthor(e.target.value)} />
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlFor="genre">Genre:</Label>
-                        <Input className="modal-form-bg" name="genre" value={editGenre} onChange={e => setEditGenre(e.target.value)} />
+                        <Input className="modal-form-bg" name="genre" value={editGenre} placeholder="Genre" onChange={e => setEditGenre(e.target.value)} />
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlFor="rating">Rating:</Label>
-                        <Input className="modal-form-bg" name="rating" value={editRating} onChange={e => setEditRating(e.target.value)} />
+                        <Input className="modal-form-bg" name="description" value={editDescription} placeholder="Description" onChange={e => setEditDescription(e.target.value)} />
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlFor="description">Description:</Label>
-                        <Input className="modal-form-bg" name="description" value={editDescription} onChange={e => setEditDescription(e.target.value)} />
+                        <Input className="modal-form-bg" name="rating" value={editRating} placeholder="Rating" onChange={e => setEditRating(e.target.value)} />
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlFor="review">Review:</Label>
-                        <Input className="modal-form-bg" name="review" value={editReview} onChange={e => setEditReview(e.target.value)} />
+                        <Input className="modal-form-bg" name="review" value={editReview} placeholder="Review" onChange={e => setEditReview(e.target.value)} />
                     </FormGroup>
-                    <Button className="modal-btn" type="submit">Add</Button>
+                    <Button className="modal-btn" type="submit">Update</Button>
                 </Form>
             </ModalBody>
         </Modal>

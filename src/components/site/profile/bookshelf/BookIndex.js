@@ -3,6 +3,8 @@ import BookCreate from './BookCreate';
 import BookEdit from './BookEdit';
 import BookCards from './BookCards';
 import { Container, Row, Col, Button } from 'reactstrap';
+import IconButton from '@material-ui/core/IconButton/IconButton';
+import AddIcon from '@material-ui/icons/Add';
 import APIURL from '../../../../helpers/environment';
 
 const BookIndex = (props) => {
@@ -53,15 +55,14 @@ const BookIndex = (props) => {
     return (
         <Container>
             <Row>
-                <Col>
-                    <h3>BookShelf</h3>
-                    <hr />
-                    <Button onClick={() => createOn()}>Create a Book +</Button>
+                <Col md="12">
+                    <h3 style={{ marginLeft: "-15px" }}>BookShelf<IconButton onClick={() => createOn()}><AddIcon style={{ color: "white" }} /></IconButton></h3>
+                    <hr style={{ marginLeft: "-15px" }} />
                 </Col>
             </Row>
             <br />
             <Row>
-                <Col>
+                <Col md="12">
                     {createActive ?
                         <BookCreate
                             bookCreate={bookCreate}
@@ -71,7 +72,7 @@ const BookIndex = (props) => {
                         />
                         : <></>}
                 </Col>
-                <Col>
+                <Col md="12">
                     <BookCards
                         books={books}
                         updateMyBooks={updateMyBooks}

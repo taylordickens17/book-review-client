@@ -4,7 +4,7 @@ import Auth from './components/auth/Auth';
 import Home from './components/site/Home';
 // import Navigation from './components/site/Navigation';
 import { BrowserRouter as Router } from 'react-router-dom';
-
+import './css/main.css'
 
 const App = () => {
   const [sessionToken, setSessionToken] = useState('');

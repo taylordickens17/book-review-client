@@ -8,6 +8,7 @@ const Auth = (props) => {
 
     return (
         <Container>
+            <h1 className="logo-book">The Book Review</h1>
             {isLogin ?
                 <Login
                     isLogin={isLogin}
