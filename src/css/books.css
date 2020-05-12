@@ -19,11 +19,11 @@
 }
 
 .modal-close {
-    margin-left: 330px !important;
+    margin-left: 14em !important;
 }
 
 .update-btn {
-    margin-left: 307px !important;
+    margin-left: 13em !important;
 }
 
 .book-card {
@@ -34,7 +34,7 @@
     border: none;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 765px) {
     .modal-close {
         margin-left: 9em !important;
     }
